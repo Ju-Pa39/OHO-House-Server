@@ -4,7 +4,7 @@ const prisma = require('../config/prisma')
 exports.createContact = async (req, res) => {
     try {
         const { name, email, phone, message } = req.body;
-
+        console.log(req.body)
         if (!name) {
             return res.status(400).json({ message: "กรุณากรอกชื่อ" });
         }

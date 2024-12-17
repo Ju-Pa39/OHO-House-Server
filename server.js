@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express()
+const cors = require('cors');
 const morgen = require('morgan')
 const {readdirSync} = require('fs')
 
 const authRouter = require('./routes/auth')
 
+app.use(cors())
 app.use(morgen('tiny'))
 app.use(express.json())
 
